@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Primary Colors */
+  --color-primary: #1e3a8a; /* blue-800 - Navy blue for academic authority */
+  --color-primary-50: #eff6ff; /* blue-50 */
+  --color-primary-100: #dbeafe; /* blue-100 */
+  --color-primary-200: #bfdbfe; /* blue-200 */
+  --color-primary-300: #93c5fd; /* blue-300 */
+  --color-primary-400: #60a5fa; /* blue-400 */
+  --color-primary-500: #3b82f6; /* blue-500 */
+  --color-primary-600: #2563eb; /* blue-600 */
+  --color-primary-700: #1d4ed8; /* blue-700 */
+  --color-primary-800: #1e3a8a; /* blue-800 */
+  --color-primary-900: #1e40af; /* blue-900 */
+
+  /* Secondary Colors */
+  --color-secondary: #64748b; /* slate-500 - Supportive hierarchy */
+  --color-secondary-50: #f8fafc; /* slate-50 */
+  --color-secondary-100: #f1f5f9; /* slate-100 */
+  --color-secondary-200: #e2e8f0; /* slate-200 */
+  --color-secondary-300: #cbd5e1; /* slate-300 */
+  --color-secondary-400: #94a3b8; /* slate-400 */
+  --color-secondary-500: #64748b; /* slate-500 */
+  --color-secondary-600: #475569; /* slate-600 */
+  --color-secondary-700: #334155; /* slate-700 */
+  --color-secondary-800: #1e293b; /* slate-800 */
+  --color-secondary-900: #0f172a; /* slate-900 */
+
+  /* Accent Colors */
+  --color-accent: #3b82f6; /* blue-500 - Interactive elements */
+  --color-accent-50: #eff6ff; /* blue-50 */
+  --color-accent-100: #dbeafe; /* blue-100 */
+  --color-accent-200: #bfdbfe; /* blue-200 */
+  --color-accent-300: #93c5fd; /* blue-300 */
+  --color-accent-400: #60a5fa; /* blue-400 */
+  --color-accent-500: #3b82f6; /* blue-500 */
+  --color-accent-600: #2563eb; /* blue-600 */
+  --color-accent-700: #1d4ed8; /* blue-700 */
+  --color-accent-800: #1e40af; /* blue-800 */
+  --color-accent-900: #1e3a8a; /* blue-900 */
+
+  /* Background Colors */
+  --color-background: #ffffff; /* white - Maximum contrast */
+  --color-surface: #f8fafc; /* slate-50 - Gentle content separation */
+
+  /* Text Colors */
+  --color-text-primary: #1e293b; /* slate-800 - Extended reading comfort */
+  --color-text-secondary: #64748b; /* slate-500 - Information hierarchy */
+
+  /* Status Colors */
+  --color-success: #059669; /* emerald-600 - Achievement */
+  --color-success-50: #ecfdf5; /* emerald-50 */
+  --color-success-100: #d1fae5; /* emerald-100 */
+  --color-success-500: #10b981; /* emerald-500 */
+  --color-success-600: #059669; /* emerald-600 */
+
+  --color-warning: #d97706; /* amber-600 - Attention without alarm */
+  --color-warning-50: #fffbeb; /* amber-50 */
+  --color-warning-100: #fef3c7; /* amber-100 */
+  --color-warning-500: #f59e0b; /* amber-500 */
+  --color-warning-600: #d97706; /* amber-600 */
+
+  --color-error: #dc2626; /* red-600 - Problem identification */
+  --color-error-50: #fef2f2; /* red-50 */
+  --color-error-100: #fee2e2; /* red-100 */
+  --color-error-500: #ef4444; /* red-500 */
+  --color-error-600: #dc2626; /* red-600 */
+
+  /* Shadows */
+  --shadow-subtle: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-medium: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-large: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+  /* Transitions */
+  --transition-fast: 200ms ease-in-out;
+  --transition-normal: 300ms ease-in-out;
+  --transition-slow: 500ms ease-in-out;
+}
+
+@layer base {
+  body {
+    font-family: 'Inter', sans-serif;
+    color: var(--color-text-primary);
+    background-color: var(--color-background);
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--color-text-primary);
+  }
+
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary-100 text-secondary-700 px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:bg-secondary-200 focus:outline-none focus:ring-2 focus:ring-secondary-500 focus:ring-offset-2;
+  }
+
+  .btn-accent {
+    @apply bg-accent text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:bg-accent-600 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2;
+  }
+
+  .card {
+    @apply bg-white rounded-lg shadow-subtle border border-secondary-200 p-6 transition-all duration-300 hover:shadow-medium;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 border border-secondary-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent-500 focus:border-accent-500 transition-all duration-200;
+  }
+
+  .mathematical-content {
+    @apply font-mono text-text-primary bg-surface p-4 rounded-lg border-l-4 border-accent;
+  }
+
+  .progress-indicator {
+    @apply bg-secondary-200 rounded-full overflow-hidden;
+  }
+
+  .progress-bar {
+    @apply bg-success h-2 rounded-full transition-all duration-500;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .animation-fade-in {
+    animation: fadeIn var(--transition-normal) ease-in-out;
+  }
+
+  .animation-slide-up {
+    animation: slideUp var(--transition-normal) ease-out;
+  }
+
+  .shadow-interactive {
+    box-shadow: var(--shadow-subtle);
+    transition: box-shadow var(--transition-normal);
+  }
+
+  .shadow-interactive:hover {
+    box-shadow: var(--shadow-medium);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

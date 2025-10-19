@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidades de Estudio - Linear Algebra Hub</title>
+    <meta name="description" content="Explora cuatro unidades completas de álgebra lineal con dificultad progresiva y conceptos interconectados. Desde fundamentos hasta aplicaciones avanzadas.">
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  
+  <script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Flinearalg3304back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.9"></script>
+  <script type="module" src="https://static.rocket.new/rocket-shot.js?v=0.0.1"></script>
+  </head>
+<body class="bg-background text-text-primary">
+    <!-- Navigation Header -->
+    <nav class="bg-white shadow-subtle sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <svg class="h-10 w-10 text-primary" viewBox="0 0 40 40" fill="currentColor">
+                            <rect x="4" y="4" width="32" height="32" rx="6" fill="none" stroke="currentColor" stroke-width="2"/>
+                            <path d="M12 16 L28 16 M12 20 L24 20 M12 24 L28 24" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <circle cx="16" cy="28" r="2" fill="currentColor"/>
+                            <circle cx="24" cy="28" r="2" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <div class="ml-3">
+                        <h1 class="text-xl font-bold text-primary">Linear Algebra Hub</h1>
+                        <p class="text-xs text-secondary">Matemáticas Visuales</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="homepage.html" class="text-secondary-600 hover:text-primary px-3 py-2 rounded-md text-sm transition-colors">Inicio</a>
+                        <a href="unit_overview.html" class="text-primary font-semibold px-3 py-2 rounded-md text-sm">Unidades</a>
+                        <a href="interactive_lesson.html" class="text-secondary-600 hover:text-primary px-3 py-2 rounded-md text-sm transition-colors">Lecciones</a>
+                        <a href="practice_exercise_hub.html" class="text-secondary-600 hover:text-primary px-3 py-2 rounded-md text-sm transition-colors">Práctica</a>
+                        <a href="visual_calculator_suite.html" class="text-secondary-600 hover:text-primary px-3 py-2 rounded-md text-sm transition-colors">Calculadoras</a>
+                        <a href="progress_dashboard.html" class="text-secondary-600 hover:text-primary px-3 py-2 rounded-md text-sm transition-colors">Progreso</a>
+                    </div>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-secondary-600 hover:text-primary p-2">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-secondary-200">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="homepage.html" class="text-secondary-600 hover:text-primary block px-3 py-2 rounded-md text-base">Inicio</a>
+                <a href="unit_overview.html" class="text-primary font-semibold block px-3 py-2 rounded-md text-base">Unidades</a>
+                <a href="interactive_lesson.html" class="text-secondary-600 hover:text-primary block px-3 py-2 rounded-md text-base">Lecciones</a>
+                <a href="practice_exercise_hub.html" class="text-secondary-600 hover:text-primary block px-3 py-2 rounded-md text-base">Práctica</a>
+                <a href="visual_calculator_suite.html" class="text-secondary-600 hover:text-primary block px-3 py-2 rounded-md text-base">Calculadoras</a>
+                <a href="progress_dashboard.html" class="text-secondary-600 hover:text-primary block px-3 py-2 rounded-md text-base">Progreso</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb Navigation -->
+    <section class="bg-surface py-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <nav class="flex" aria-label="Breadcrumb">
+                <ol class="flex items-center space-x-4">
+                    <li>
+                        <div>
+                            <a href="homepage.html" class="text-secondary-600 hover:text-primary transition-colors">
+                                <svg class="flex-shrink-0 h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/>
+                                </svg>
+                                <span class="sr-only">Inicio</span>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="flex items-center">
+                            <svg class="flex-shrink-0 h-5 w-5 text-secondary-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="ml-4 text-sm font-medium text-primary">Unidades de Estudio</span>
+                        </div>
+                    </li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-br from-primary-50 via-white to-accent-50 py-16 overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <svg class="w-full h-full" viewBox="0 0 1200 600" fill="none">
+                <defs>
+                    <pattern id="unit-grid" width="60" height="60" patternUnits="userSpaceOnUse">
+                        <path d="M 60 0 L 0 0 0 60" fill="none" stroke="currentColor" stroke-width="1"/>
+                    </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#unit-grid)" class="text-primary"/>
+                <path d="M100 200 Q300 100 500 200 T900 200" stroke="currentColor" stroke-width="2" fill="none" class="text-accent opacity-30"/>
+                <circle cx="150" cy="150" r="4" fill="currentColor" class="text-accent animate-pulse"/>
+                <circle cx="450" cy="250" r="4" fill="currentColor" class="text-accent animate-pulse" style="animation-delay: 1s"/>
+                <circle cx="750" cy="180" r="4" fill="currentColor" class="text-accent animate-pulse" style="animation-delay: 2s"/>
+            </svg>
+        </div>
+        
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl lg:text-5xl font-bold text-text-primary mb-6">
+                    Unidades de Estudio
+                    <span class="text-primary block">Álgebra Lineal Completa</span>
+                </h1>
+                <p class="text-xl text-secondary-600 mb-8 max-w-3xl mx-auto">
+                    Cuatro unidades progresivas que te llevarán desde los conceptos fundamentales hasta las aplicaciones avanzadas del álgebra lineal en el mundo real.
+                </p>
+                
+                <!-- Progress Overview -->
+                <div class="bg-white rounded-2xl shadow-large p-8 max-w-4xl mx-auto border border-secondary-200">
+                    <div class="grid md:grid-cols-4 gap-6 mb-6">
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                                <span class="text-2xl font-bold text-primary">4</span>
+                            </div>
+                            <div class="text-sm text-secondary-600">Unidades Completas</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-success-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                                <span class="text-2xl font-bold text-success">48</span>
+                            </div>
+                            <div class="text-sm text-secondary-600">Lecciones Interactivas</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                                <span class="text-2xl font-bold text-accent">240+</span>
+                            </div>
+                            <div class="text-sm text-secondary-600">Ejercicios Prácticos</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-warning-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                                <span class="text-2xl font-bold text-warning">12</span>
+                            </div>
+                            <div class="text-sm text-secondary-600">Aplicaciones Reales</div>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-secondary-600 mb-4">Tu progreso general en el curso</p>
+                        <div class="progress-indicator h-3 mb-2">
+                            <div class="progress-bar w-1/4"></div>
+                        </div>
+                        <p class="text-sm text-secondary-500">25% completado - Continúa con la Unidad 2</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Path Visualization -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-text-primary mb-4">Ruta de Aprendizaje</h2>
+                <p class="text-xl text-secondary-600 max-w-3xl mx-auto">
+                    Cada unidad se construye sobre la anterior, creando una base sólida de conocimiento matemático
+                </p>
+            </div>
+
+            <!-- Desktop Learning Path -->
+            <div class="hidden lg:block">
+                <div class="relative">
+                    <!-- Connection Lines -->
+                    <svg class="absolute inset-0 w-full h-full" viewBox="0 0 1200 400" fill="none">
+                        <path d="M300 200 Q450 150 600 200" stroke="#3b82f6" stroke-width="3" fill="none" stroke-dasharray="5,5" class="animate-pulse"/>
+                        <path d="M600 200 Q750 150 900 200" stroke="#3b82f6" stroke-width="3" fill="none" stroke-dasharray="5,5" class="animate-pulse" style="animation-delay: 0.5s"/>
+                        <path d="M900 200 Q1050 150 1200 200" stroke="#3b82f6" stroke-width="3" fill="none" stroke-dasharray="5,5" class="animate-pulse" style="animation-delay: 1s"/>
+                    </svg>
+                    
+                    <div class="grid grid-cols-4 gap-8 relative z-10">
+                        <!-- Unit 1 -->
+                        <div class="text-center">
+                            <div class="w-20 h-20 bg-success-100 rounded-full flex items-center justify-center mx-auto mb-4 border-4 border-success-500">
+                                <svg class="w-8 h-8 text-success-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                            </div>
+                            <h3 class="font-semibold text-text-primary mb-2">Unidad 1</h3>
+                            <p class="text-sm text-success-600 font-medium">Completada</p>
+                        </div>
+
+                        <!-- Unit 2 -->
+                        <div class="text-center">
+                            <div class="w-20 h-20 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4 border-4 border-primary-500 animate-pulse">
+                                <span class="text-2xl font-bold text-primary">2</span>
+                            </div>
+                            <h3 class="font-semibold text-text-primary mb-2">Unidad 2</h3>
+                            <p class="text-sm text-primary font-medium">En Progreso</p>
+                        </div>
+
+                        <!-- Unit 3 -->
+                        <div class="text-center">
+                            <div class="w-20 h-20 bg-secondary-100 rounded-full flex items-center justify-center mx-auto mb-4 border-4 border-secondary-300">
+                                <span class="text-2xl font-bold text-secondary-500">3</span>
+                            </div>
+                            <h3 class="font-semibold text-secondary-600 mb-2">Unidad 3</h3>
+                            <p class="text-sm text-secondary-500">Bloqueada</p>
+                        </div>
+
+                        <!-- Unit 4 -->
+                        <div class="text-center">
+                            <div class="w-20 h-20 bg-secondary-100 rounded-full flex items-center justify-center mx-auto mb-4 border-4 border-secondary-300">
+                                <span class="text-2xl font-bold text-secondary-500">4</span>
+                            </div>
+                            <h3 class="font-semibold text-secondary-600 mb-2">Unidad 4</h3>
+                            <p class="text-sm text-secondary-500">Bloqueada</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Learning Path -->
+            <div class="lg:hidden space-y-6">
+                <div class="flex items-center">
+                    <div class="w-16 h-16 bg-success-100 rounded-full flex items-center justify-center border-4 border-success-500">
+                        <svg class="w-6 h-6 text-success-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <div class="ml-4 flex-1">
+                        <h3 class="font-semibold text-text-primary">Unidad 1 - Completada</h3>
+                        <p class="text-sm text-success-600">Fundamentos dominados</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-center">
+                    <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center border-4 border-primary-500 animate-pulse">
+                        <span class="text-xl font-bold text-primary">2</span>
+                    </div>
+                    <div class="ml-4 flex-1">
+                        <h3 class="font-semibold text-text-primary">Unidad 2 - En Progreso</h3>
+                        <p class="text-sm text-primary">Continúa aprendiendo</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-center opacity-50">
+                    <div class="w-16 h-16 bg-secondary-100 rounded-full flex items-center justify-center border-4 border-secondary-300">
+                        <span class="text-xl font-bold text-secondary-500">3</span>
+                    </div>
+                    <div class="ml-4 flex-1">
+                        <h3 class="font-semibold text-secondary-600">Unidad 3 - Bloqueada</h3>
+                        <p class="text-sm text-secondary-500">Completa la Unidad 2 primero</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-center opacity-50">
+                    <div class="w-16 h-16 bg-secondary-100 rounded-full flex items-center justify-center border-4 border-secondary-300">
+                        <span class="text-xl font-bold text-secondary-500">4</span>
+                    </div>
+                    <div class="ml-4 flex-1">
+                        <h3 class="font-semibold text-secondary-600">Unidad 4 - Bloqueada</h3>
+                        <p class="text-sm text-secondary-500">Completa la Unidad 3 primero</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Units Grid -->
+    <section class="py-20 bg-surface">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Unit 1: Foundations -->
+                <div class="card group hover:shadow-large transition-all duration-300">
+                    <div class="flex items-start justify-between mb-6">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-success-100 rounded-lg flex items-center justify-center mr-4">
+                                <svg class="w-6 h-6 text-success-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-text-primary">Unidad 1: Fundamentos</h3>
+                                <p class="text-success-600 font-medium">Completada</p>
+                            </div>
+                        </div>
+                        <span class="px-3 py-1 bg-success-100 text-success-700 rounded-full text-sm font-medium">Básico</span>
+                    </div>
+
+                    <img src="https://images.unsplash.com/photo-1576595580224-ac656e142d05" 
+                         alt="Representación visual de conceptos fundamentales de álgebra lineal con matrices y vectores básicos" 
+                         class="w-full h-48 object-cover rounded-lg mb-6 group-hover:scale-105 transition-transform duration-300"
+                         loading="lazy"
+                         onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+
+                    <p class="text-secondary-700 mb-6">
+                        Domina los conceptos esenciales: vectores, matrices, operaciones básicas y sistemas de ecuaciones lineales. 
+                        La base sólida para todo el álgebra lineal.
+                    </p>
+
+                    <!-- Topics Covered -->
+                    <div class="mb-6">
+                        <h4 class="font-semibold text-text-primary mb-3">Temas Cubiertos:</h4>
+                        <div class="grid grid-cols-2 gap-2">
+                            <div class="flex items-center text-sm text-secondary-600">
+                                <svg class="w-4 h-4 text-success-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                Vectores en R²
+                            </div>
+                            <div class="flex items-center text-sm text-secondary-600">
+                                <svg class="w-4 h-4 text-success-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                Matrices básicas
+                            </div>
+                            <div class="flex items-center text-sm text-secondary-600">
+                                <svg class="w-4 h-4 text-success-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                Sistemas lineales
+                            </div>
+                            <div class="flex items-center text-sm text-secondary-600">
+                                <svg class="w-4 h-4 text-success-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                Eliminación gaussiana
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mathematical Preview -->
+                    <div class="mathematical-content mb-6">
+                        <div class="text-center">
+                            <div class="text-lg">
+                                $$\begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix} \begin{bmatrix} x \\ y \end{bmatrix} = \begin{bmatrix} 5 \\ 6 \end{bmatrix}$$
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Progress and Stats -->
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="flex items-center">
+                            <div class="progress-indicator w-24 h-2 mr-3">
+                                <div class="progress-bar w-full"></div>
+                            </div>
+                            <span class="text-sm text-success-600 font-medium">100%</span>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-sm text-secondary-600">12 lecciones</div>
+                            <div class="text-sm text-secondary-600">~8 horas</div>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="flex gap-3">
+                        <a href="interactive_lesson.html" class="btn-secondary flex-1 text-center">Revisar Contenido</a>
+                        <a href="practice_exercise_hub.html" class="btn-primary flex-1 text-center">Practicar Más</a>
+                    </div>
+                </div>
+
+                <!-- Unit 2: Vector Spaces -->
+                <div class="card group hover:shadow-large transition-all duration-300">
+                    <div class="flex items-start justify-between mb-6">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mr-4 animate-pulse">
+                                <span class="text-xl font-bold text-primary">2</span>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-text-primary">Unidad 2: Espacios Vectoriales</h3>
+                                <p class="text-primary font-medium">En Progreso - 60%</p>
+                            </div>
+                        </div>
+                        <span class="px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm font-medium">Intermedio</span>
+                    </div>
+
+                    <img src="https://images.unsplash.com/photo-1723366319766-21a5f7352c5c" 
+                         alt="Visualización de espacios vectoriales tridimensionales con vectores base y transformaciones lineales" 
+                         class="w-full h-48 object-cover rounded-lg mb-6 group-hover:scale-105 transition-transform duration-300"
+                         loading="lazy"
+                         onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+
+                    <p class="text-secondary-700 mb-6">
+                        Explora la estructura abstracta de los espacios vectoriales, independencia lineal, bases y dimensiones. 
+                        Conceptos fundamentales para la comprensión profunda.
+                    </p>
+
+                    <!-- Topics Covered -->
+                    <div class="mb-6">
+                        <h4 class="font-semibold text-text-primary mb-3">Temas Cubiertos:</h4>
+                        <div class="grid grid-cols-2 gap-2">
+                            <div class="flex items-center text-sm text-secondary-600">
+                                <svg class="w-4 h-4 text-success-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                Espacios vectoriales
+                            </div>
+                            <div class="flex items-center text-sm text-secondary-600">
+                                <svg class="w-4 h-4 text-success-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                Independencia lineal
+                            </div>
+                            <div class="flex items-center text-sm text-primary">
+                                <svg class="w-4 h-4 text-primary mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                                Bases y dimensión
+                            </div>
+                            <div class="flex items-center text-sm text-secondary-400">
+                                <svg class="w-4 h-4 text-secondary-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                                </svg>
+                                Subespacios
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mathematical Preview -->
+                    <div class="mathematical-content mb-6">
+                        <div class="text-center">
+                            <div class="text-lg">
+                                $$\text{span}\{v_1, v_2, v_3\} = \{a_1v_1 + a_2v_2 + a_3v_3 : a_i \in \mathbb{R}\}$$
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Progress and Stats -->
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="flex items-center">
+                            <div class="progress-indicator w-24 h-2 mr-3">
+                                <div class="progress-bar w-3/5"></div>
+                            </div>
+                            <span class="text-sm text-primary font-medium">60%</span>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-sm text-secondary-600">15 lecciones</div>
+                            <div class="text-sm text-secondary-600">~12 horas</div>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="flex gap-3">
+                        <a href="interactive_lesson.html" class="btn-primary flex-1 text-center">Continuar Lección</a>
+                        <a href="practice_exercise_hub.html" class="btn-secondary flex-1 text-center">Ejercicios</a>
+                    </div>
+                </div>
+
+                <!-- Unit 3: Linear Transformations -->
+                <div class="card group opacity-60 cursor-not-allowed">
+                    <div class="flex items-start justify-between mb-6">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-secondary-100 rounded-lg flex items-center justify-center mr-4">
+                                <svg class="w-6 h-6 text-secondary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-secondary-600">Unidad 3: Transformaciones Lineales</h3>
+                                <p class="text-secondary-500">Bloqueada</p>
+                            </div>
+                        </div>
+                        <span class="px-3 py-1 bg-secondary-100 text-secondary-600 rounded-full text-sm font-medium">Avanzado</span>
+                    </div>
+
+                    <img src="https://images.unsplash.com/photo-1727522974575-ff09140e2043" 
+                         alt="Representación gráfica de transformaciones lineales con matrices de rotación y escalamiento" 
+                         class="w-full h-48 object-cover rounded-lg mb-6 grayscale"
+                         loading="lazy"
+                         onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+
+                    <p class="text-secondary-600 mb-6">
+                        Comprende cómo las matrices representan transformaciones geométricas: rotaciones, escalamientos, reflexiones y proyecciones en el espacio.
+                    </p>
+
+                    <!-- Topics Preview -->
+                    <div class="mb-6">
+                        <h4 class="font-semibold text-secondary-600 mb-3">Próximos Temas:</h4>
+                        <div class="grid grid-cols-2 gap-2">
+                            <div class="flex items-center text-sm text-secondary-500">
+                                <svg class="w-4 h-4 text-secondary-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                                </svg>
+                                Transformaciones
+                            </div>
+                            <div class="flex items-center text-sm text-secondary-500">
+                                <svg class="w-4 h-4 text-secondary-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                                </svg>
+                                Matrices de cambio
+                            </div>
+                            <div class="flex items-center text-sm text-secondary-500">
+                                <svg class="w-4 h-4 text-secondary-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                                </svg>
+                                Kernel e imagen
+                            </div>
+                            <div class="flex items-center text-sm text-secondary-500">
+                                <svg class="w-4 h-4 text-secondary-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                                </svg>
+                                Isomorfismos
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mathematical Preview -->
+                    <div class="mathematical-content mb-6 opacity-50">
+                        <div class="text-center">
+                            <div class="text-lg">
+                                $$T: \mathbb{R}^n \rightarrow \mathbb{R}^m, \quad T(\vec{x}) = A\vec{x}$$
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Unlock Requirements -->
+                    <div class="bg-secondary-50 p-4 rounded-lg mb-6">
+                        <div class="flex items-center mb-2">
+                            <svg class="w-5 h-5 text-secondary-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                            </svg>
+                            <span class="font-medium text-secondary-700">Requisitos para desbloquear:</span>
+                        </div>
+                        <ul class="text-sm text-secondary-600 space-y-1">
+                            <li>• Completar la Unidad 2 con 80% o más</li>
+                            <li>• Aprobar el examen de espacios vectoriales</li>
+                            <li>• Tiempo estimado restante: 5 horas</li>
+                        </ul>
+                    </div>
+
+                    <!-- Disabled Action -->
+                    <div class="text-center">
+                        <button class="btn-secondary w-full opacity-50 cursor-not-allowed" disabled>
+                            Completa la Unidad 2 Primero
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Unit 4: Eigenvalues and Applications -->
+                <div class="card group opacity-60 cursor-not-allowed">
+                    <div class="flex items-start justify-between mb-6">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-secondary-100 rounded-lg flex items-center justify-center mr-4">
+                                <svg class="w-6 h-6 text-secondary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-secondary-600">Unidad 4: Eigenvalores y Aplicaciones</h3>
+                                <p class="text-secondary-500">Bloqueada</p>
+                            </div>
+                        </div>
+                        <span class="px-3 py-1 bg-warning-100 text-warning-700 rounded-full text-sm font-medium">Experto</span>
+                    </div>
+
+                    <img src="https://images.unsplash.com/photo-1672479818475-209e6c879d9c" 
+                         alt="Visualización de eigenvalores y eigenvectores con aplicaciones en análisis de datos y machine learning" 
+                         class="w-full h-48 object-cover rounded-lg mb-6 grayscale"
+                         loading="lazy"
+                         onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+
+                    <p class="text-secondary-600 mb-6">
+                        La culminación del curso: eigenvalores, eigenvectores, diagonalización y sus aplicaciones en ciencia de datos, ingeniería y física.
+                    </p>
+
+                    <!-- Topics Preview -->
+                    <div class="mb-6">
+                        <h4 class="font-semibold text-secondary-600 mb-3">Aplicaciones del Mundo Real:</h4>
+                        <div class="grid grid-cols-2 gap-2">
+                            <div class="flex items-center text-sm text-secondary-500">
+                                <svg class="w-4 h-4 text-secondary-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                                </svg>
+                                PCA en ML
+                            </div>
+                            <div class="flex items-center text-sm text-secondary-500">
+                                <svg class="w-4 h-4 text-secondary-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                                </svg>
+                                Análisis de vibraciones
+                            </div>
+                            <div class="flex items-center text-sm text-secondary-500">
+                                <svg class="w-4 h-4 text-secondary-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                                </svg>
+                                Google PageRank
+                            </div>
+                            <div class="flex items-center text-sm text-secondary-500">
+                                <svg class="w-4 h-4 text-secondary-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                                </svg>
+                                Mecánica cuántica
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mathematical Preview -->
+                    <div class="mathematical-content mb-6 opacity-50">
+                        <div class="text-center">
+                            <div class="text-lg">
+                                $$A\vec{v} = \lambda\vec{v}, \quad \det(A - \lambda I) = 0$$
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Unlock Requirements -->
+                    <div class="bg-secondary-50 p-4 rounded-lg mb-6">
+                        <div class="flex items-center mb-2">
+                            <svg class="w-5 h-5 text-secondary-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                            </svg>
+                            <span class="font-medium text-secondary-700">Requisitos para desbloquear:</span>
+                        </div>
+                        <ul class="text-sm text-secondary-600 space-y-1">
+                            <li>• Completar las Unidades 1, 2 y 3</li>
+                            <li>• Aprobar todos los exámenes previos</li>
+                            <li>• Tiempo estimado restante: 17 horas</li>
+                        </ul>
+                    </div>
+
+                    <!-- Disabled Action -->
+                    <div class="text-center">
+                        <button class="btn-secondary w-full opacity-50 cursor-not-allowed" disabled>
+                            Completa las Unidades Anteriores
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prerequisites and Recommendations -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-text-primary mb-4">Preparación y Recursos</h2>
+                <p class="text-xl text-secondary-600 max-w-3xl mx-auto">
+                    Asegúrate de tener las bases necesarias y aprovecha nuestros recursos complementarios
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Prerequisites -->
+                <div class="card">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-warning-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-warning-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-text-primary mb-4">Conocimientos Previos</h3>
+                    </div>
+                    
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-warning-500 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-secondary-700">Álgebra básica y manipulación de ecuaciones</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-warning-500 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-secondary-700">Geometría analítica en el plano</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-warning-500 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-secondary-700">Funciones y gráficas básicas</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-warning-500 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-secondary-700">Conceptos básicos de conjuntos</span>
+                        </li>
+                    </ul>
+
+                    <a href="javascript:void(0)" class="btn-secondary w-full">Evaluación de Prerrequisitos</a>
+                </div>
+
+                <!-- Study Tools -->
+                <div class="card">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-accent-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-text-primary mb-4">Herramientas de Estudio</h3>
+                    </div>
+                    
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-accent-500 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-secondary-700">Calculadoras visuales interactivas</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-accent-500 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-secondary-700">Hojas de fórmulas descargables</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-accent-500 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-secondary-700">Videos explicativos paso a paso</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-accent-500 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-secondary-700">Simuladores de conceptos 3D</span>
+                        </li>
+                    </ul>
+
+                    <a href="visual_calculator_suite.html" class="btn-primary w-full">Explorar Herramientas</a>
+                </div>
+
+                <!-- Study Schedule -->
+                <div class="card">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-success-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-success-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-text-primary mb-4">Plan de Estudio Recomendado</h3>
+                    </div>
+                    
+                    <div class="space-y-4 mb-6">
+                        <div class="bg-success-50 p-4 rounded-lg">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-medium text-success-700">Semanas 1-2</span>
+                                <span class="text-sm text-success-600">Unidad 1</span>
+                            </div>
+                            <p class="text-sm text-success-600">Fundamentos y sistemas lineales</p>
+                        </div>
+                        
+                        <div class="bg-primary-50 p-4 rounded-lg">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-medium text-primary-700">Semanas 3-5</span>
+                                <span class="text-sm text-primary-600">Unidad 2</span>
+                            </div>
+                            <p class="text-sm text-primary-600">Espacios vectoriales y bases</p>
+                        </div>
+                        
+                        <div class="bg-secondary-50 p-4 rounded-lg opacity-60">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-medium text-secondary-600">Semanas 6-8</span>
+                                <span class="text-sm text-secondary-500">Unidad 3</span>
+                            </div>
+                            <p class="text-sm text-secondary-500">Transformaciones lineales</p>
+                        </div>
+                        
+                        <div class="bg-secondary-50 p-4 rounded-lg opacity-60">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-medium text-secondary-600">Semanas 9-12</span>
+                                <span class="text-sm text-secondary-500">Unidad 4</span>
+                            </div>
+                            <p class="text-sm text-secondary-500">Eigenvalores y aplicaciones</p>
+                        </div>
+                    </div>
+
+                    <a href="progress_dashboard.html" class="btn-secondary w-full">Ver Mi Progreso</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Real-World Applications Preview -->
+    <section class="py-20 bg-surface">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-text-primary mb-4">Aplicaciones en el Mundo Real</h2>
+                <p class="text-xl text-secondary-600 max-w-3xl mx-auto">
+                    Descubre cómo el álgebra lineal impulsa la tecnología moderna y la ciencia
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Computer Graphics -->
+                <div class="card text-center group hover:shadow-large transition-all duration-300">
+                    <img src="https://images.unsplash.com/photo-1689776618460-bb6487722754" 
+                         alt="Gráficos por computadora mostrando transformaciones 3D y renderizado usando álgebra lineal" 
+                         class="w-full h-32 object-cover rounded-lg mb-4 group-hover:scale-105 transition-transform duration-300"
+                         loading="lazy"
+                         onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+                    <h3 class="font-semibold text-text-primary mb-2">Gráficos por Computadora</h3>
+                    <p class="text-sm text-secondary-600">Transformaciones 3D, rotaciones y proyecciones en videojuegos y animación</p>
+                </div>
+
+                <!-- Machine Learning -->
+                <div class="card text-center group hover:shadow-large transition-all duration-300">
+                    <img src="https://images.unsplash.com/photo-1591453089816-0fbb971b454c" 
+                         alt="Algoritmos de machine learning utilizando álgebra lineal para análisis de datos y predicciones" 
+                         class="w-full h-32 object-cover rounded-lg mb-4 group-hover:scale-105 transition-transform duration-300"
+                         loading="lazy"
+                         onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+                    <h3 class="font-semibold text-text-primary mb-2">Machine Learning</h3>
+                    <p class="text-sm text-secondary-600">PCA, regresión lineal y redes neuronales basadas en matrices</p>
+                </div>
+
+                <!-- Engineering -->
+                <div class="card text-center group hover:shadow-large transition-all duration-300">
+                    <img src="https://images.unsplash.com/photo-1727522974614-b592018e49e1" 
+                         alt="Aplicaciones de ingeniería usando álgebra lineal para análisis estructural y sistemas de control" 
+                         class="w-full h-32 object-cover rounded-lg mb-4 group-hover:scale-105 transition-transform duration-300"
+                         loading="lazy"
+                         onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+                    <h3 class="font-semibold text-text-primary mb-2">Ingeniería</h3>
+                    <p class="text-sm text-secondary-600">Análisis estructural, sistemas de control y procesamiento de señales</p>
+                </div>
+
+                <!-- Economics -->
+                <div class="card text-center group hover:shadow-large transition-all duration-300">
+                    <img src="https://images.unsplash.com/photo-1509228468518-180dd4864904" 
+                         alt="Modelos económicos y análisis financiero utilizando sistemas de ecuaciones lineales" 
+                         class="w-full h-32 object-cover rounded-lg mb-4 group-hover:scale-105 transition-transform duration-300"
+                         loading="lazy"
+                         onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+                    <h3 class="font-semibold text-text-primary mb-2">Economía</h3>
+                    <p class="text-sm text-secondary-600">Modelos económicos, optimización y análisis de mercados</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-secondary-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Brand -->
+                <div>
+                    <div class="flex items-center mb-4">
+                        <svg class="h-8 w-8 text-primary-400" viewBox="0 0 40 40" fill="currentColor">
+                            <rect x="4" y="4" width="32" height="32" rx="6" fill="none" stroke="currentColor" stroke-width="2"/>
+                            <path d="M12 16 L28 16 M12 20 L24 20 M12 24 L28 24" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <circle cx="16" cy="28" r="2" fill="currentColor"/>
+                            <circle cx="24" cy="28" r="2" fill="currentColor"/>
+                        </svg>
+                        <span class="ml-2 text-xl font-bold">Linear Algebra Hub</span>
+                    </div>
+                    <p class="text-secondary-300 mb-4">Transformando el aprendizaje de álgebra lineal a través de experiencias visuales e interactivas.</p>
+                    <div class="flex space-x-4">
+                        <a href="javascript:void(0)" class="text-secondary-400 hover:text-white transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                            </svg>
+                        </a>
+                        <a href="javascript:void(0)" class="text-secondary-400 hover:text-white transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
+                            </svg>
+                        </a>
+                        <a href="javascript:void(0)" class="text-secondary-400 hover:text-white transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Learning -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Aprendizaje</h3>
+                    <ul class="space-y-2">
+                        <li><a href="unit_overview.html" class="text-secondary-300 hover:text-white transition-colors">Unidades de Estudio</a></li>
+                        <li><a href="interactive_lesson.html" class="text-secondary-300 hover:text-white transition-colors">Lecciones Interactivas</a></li>
+                        <li><a href="practice_exercise_hub.html" class="text-secondary-300 hover:text-white transition-colors">Ejercicios Prácticos</a></li>
+                        <li><a href="visual_calculator_suite.html" class="text-secondary-300 hover:text-white transition-colors">Herramientas Visuales</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Soporte</h3>
+                    <ul class="space-y-2">
+                        <li><a href="javascript:void(0)" class="text-secondary-300 hover:text-white transition-colors">Centro de Ayuda</a></li>
+                        <li><a href="javascript:void(0)" class="text-secondary-300 hover:text-white transition-colors">Tutoriales</a></li>
+                        <li><a href="javascript:void(0)" class="text-secondary-300 hover:text-white transition-colors">Comunidad</a></li>
+                        <li><a href="javascript:void(0)" class="text-secondary-300 hover:text-white transition-colors">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <!-- Progress -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Tu Progreso</h3>
+                    <ul class="space-y-2">
+                        <li><a href="progress_dashboard.html" class="text-secondary-300 hover:text-white transition-colors">Panel de Control</a></li>
+                        <li><a href="javascript:void(0)" class="text-secondary-300 hover:text-white transition-colors">Logros</a></li>
+                        <li><a href="javascript:void(0)" class="text-secondary-300 hover:text-white transition-colors">Certificados</a></li>
+                        <li><a href="javascript:void(0)" class="text-secondary-300 hover:text-white transition-colors">Estadísticas</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-secondary-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-secondary-400 text-sm">© 2025 Linear Algebra Hub. Todos los derechos reservados.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="javascript:void(0)" class="text-secondary-400 hover:text-white text-sm transition-colors">Privacidad</a>
+                    <a href="javascript:void(0)" class="text-secondary-400 hover:text-white text-sm transition-colors">Términos</a>
+                    <a href="javascript:void(0)" class="text-secondary-400 hover:text-white text-sm transition-colors">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animation-fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards and sections
+        document.querySelectorAll('.card, section').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Unit card interactions
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                if (!this.classList.contains('opacity-60')) {
+                    this.style.transform = 'translateY(-4px)';
+                }
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+
+        // Progress bar animations
+        function animateProgressBars() {
+            const progressBars = document.querySelectorAll('.progress-bar');
+            progressBars.forEach(bar => {
+                const width = bar.style.width || bar.classList.toString().match(/w-(\d+\/\d+|\d+)/)?.[0];
+                if (width) {
+                    bar.style.width = '0%';
+                    setTimeout(() => {
+                        bar.style.width = width.includes('/') ? 
+                            (parseInt(width.split('-')[1].split('/')[0]) / parseInt(width.split('-')[1].split('/')[1]) * 100) + '%' :
+                            width.replace('w-', '') + '%';
+                    }, 500);
+                }
+            });
+        }
+
+        // Trigger progress bar animation when visible
+        const progressObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateProgressBars();
+                    progressObserver.unobserve(entry.target);
+                }
+            });
+        });
+
+        document.querySelectorAll('.progress-indicator').forEach(el => {
+            progressObserver.observe(el);
+        });
+
+        // MathJax configuration
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+
+        // Unit unlock simulation (for demo purposes)
+        function simulateUnitProgress() {
+            // This would normally be connected to actual progress data
+            const unit2Progress = 60;
+            const unit2ProgressBar = document.querySelector('.card:nth-child(2) .progress-bar');
+            if (unit2ProgressBar) {
+                unit2ProgressBar.style.width = unit2Progress + '%';
+            }
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            simulateUnitProgress();
+        });
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>
